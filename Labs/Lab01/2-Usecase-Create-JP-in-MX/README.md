@@ -16,6 +16,8 @@ How to reserve : https://www.ibm.com/support/pages/how-create-reservation-techzo
 Watson data Information
 1.			Milvus service GRPC host - 
 2.			Milvus service GRPC port
+3.			Milvus host URL : https://<hostname>:<port>
+
 
 Watsonx Information
 1.			URL (https://dataplatform.cloud.ibm.com)
