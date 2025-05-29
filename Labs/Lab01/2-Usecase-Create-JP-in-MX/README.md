@@ -1,8 +1,8 @@
 ### 1. Create a temporary file(notepad/texteditor) in your local machine to save key information such as,
 
 Watson data Information
-1.			GRPC host - 
-2.			GRPC port
+1.			Milvus service GRPC host - 
+2.			Milvus service GRPC port
 
 Watsonx Information
 1.			URL (https://dataplatform.cloud.ibm.com)
