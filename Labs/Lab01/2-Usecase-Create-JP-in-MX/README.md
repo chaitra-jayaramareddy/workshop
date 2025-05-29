@@ -8,6 +8,8 @@ Watonsx.data : https://techzone.ibm.com/my/reservations/create/67e6c2a9bc768d343
 
 Watsonx.Orchestrate/AI : https://techzone.ibm.com/my/reservations/create/67d2f22a74a8be45b4f52bc5
 
+How to reserve : https://www.ibm.com/support/pages/how-create-reservation-techzone
+
 
 ### 1. Create a temporary file(notepad/texteditor) in your local machine to save key information such as,
 
