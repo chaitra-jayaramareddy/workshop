@@ -1,0 +1,86 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "Get Maximo Job Plan Details",
+    "version": "1.0.0",
+    "description": "Calls Maximo REST API to retrieve job plan details using the MXAPIJOBPLAN object. The job plan is fetched based on provided jpnum and status values from Watson Assistant."
+  },
+  "servers": [
+    {
+      "url": "http://maximo-get-jobplan-maximo-split-jp.apps.itz-iyom0i.infra01-lb.dal14.techzone.ibm.com"
+    }
+  ],
+  "paths": {
+    "/get-jobplan": {
+      "get": {
+        "summary": "Get Job Plan Details",
+        "description": "Retrieve job plan details from Maximo based on jpnum and optional status query parameters.",
+        "parameters": [
+          {
+            "name": "jpnum",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "string"
+            },
+            "description": "Job plan number to retrieve"
+          },
+          {
+            "name": "status",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            },
+            "description": "Optional job plan status filter"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Job plan fetched successfully",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "jpnum": {
+                      "type": "string",
+                      "description": "Job plan number"
+                    },
+                    "status": {
+                      "type": "string",
+                      "description": "Job plan status"
+                    },
+                    "description": {
+                      "type": "string",
+                      "description": "Job plan description"
+                    },
+                    "message": {
+                      "type": "string",
+                      "description": "Success message"
+                    },
+                    "pluscrevnum": {
+                      "type": "integer",
+                      "description": "Job plan revision number"
+                    },
+                    "jobplanid": {
+                      "type": "integer",
+                      "description": "Unique internal ID of the job plan"
+                    }
+                  },
+                  "required": ["jpnum", "status", "description", "message", "pluscrevnum","jobplanid"]
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Missing or invalid query parameters"
+          },
+          "500": {
+            "description": "Server error while retrieving job plan"
+          }
+        }
+      }
+    }
+  }
+}

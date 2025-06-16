@@ -1,0 +1,105 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "Update Maximo Job Plan Status",
+    "version": "1.0.0",
+    "description": "Update the status of a Maximo Job Plan using the job plan ID."
+  },
+  "servers": [
+    {
+      "url": "http://maximo-update-jobplan-status-maximo-update-jp-status.apps.itz-iyom0i.infra01-lb.dal14.techzone.ibm.com"
+    }
+  ],
+  "paths": {
+    "/update-jobplan-status": {
+      "post": {
+        "summary": "Update job plan status",
+        "description": "Updates the job plan status, pluscrevnum, and pluscrevcom based on jobplanid.",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "jobplanid": {
+                    "type": "integer",
+                    "description": "The numeric job plan ID to update"
+                  },
+                  "pluscrevcom": {
+                    "type": "string",
+                    "description": "Revision comment"
+                  },
+                  "pluscrevnum": {
+                    "type": "integer",
+                    "description": "Revision number"
+                  },
+                  "status": {
+                    "type": "string",
+                    "description": "New job plan status"
+                  }
+                },
+                "required": [
+                  "jobplanid",
+                  "pluscrevcom",
+                  "pluscrevnum",
+                  "status"
+                ]
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Job plan updated successfully",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "jobplanid": {
+                      "type": "integer"
+                    },
+                    "maximo_response": {
+                      "type": "object",
+                      "properties": {
+                        "jpnum": {
+                          "type": "string"
+                        },
+                        "status": {
+                          "type": "string"
+                        },
+                        "status_description": {
+                          "type": "string"
+                        }
+                      },
+                      "required": [
+                        "jpnum",
+                        "status",
+                        "status_description"
+                      ]
+                    },
+                    "message": {
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "jobplanid",
+                    "maximo_response",
+                    "message"
+                  ]
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid request"
+          },
+          "500": {
+            "description": "Server error"
+          }
+        }
+      }
+    }
+  }
+}
