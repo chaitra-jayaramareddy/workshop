@@ -14,7 +14,7 @@ To generate a WatsonX API key, follow the instructions in the official IBM docum
 [Create WatsonX API Key](https://www.ibm.com/docs/en/masv-and-l/maximo-manage/continuous-delivery?topic=setup-create-watsonx-api-key)
 
 --------------------------------------------------------------------------------------------------------------------------------------
-### Provision environements for watsonx data , orchestrate(for assistance),watsonx.ai
+### Provision environments for Watsonx.data , Orchestrate(For Assistance),Watsonx.ai
 
 TechZone Certified Base Images 
 
