@@ -1,4 +1,4 @@
-### Environment stepup
+### Environment setup
 
 ### 1. Setup account in Image registry (For example : https://hub.docker.com)
 
