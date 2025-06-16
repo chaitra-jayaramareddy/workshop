@@ -1,4 +1,4 @@
-### Provision environements for watsonx data , orchestrate(for assistance),watsonx.ai
+### Provision environments for Watsonx.data , Orchestrate(For Assistance),Watsonx.ai
 
 TechZone Certified Base Images 
 
